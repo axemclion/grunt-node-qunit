@@ -1,0 +1,56 @@
+{
+  "name": "grunt-node-qunit",
+  "description": "Grunt task running node-qnuit [https://github.com/kof/node-qunit]",
+  "version": "0.0.5",
+  "homepage": "https://github.com/axemclion/grunt-node-qunit",
+  "author": {
+    "name": "Parashuram",
+    "email": "code@nparashuram.com",
+    "url": "http://nparashuram.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/axemclion/grunt-node-qunit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/axemclion/grunt-node-qunit/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/axemclion/grunt-node-qunit/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "bin": {
+    "grunt-saucelabs-qunit": "bin/grunt-node-qunit"
+  },
+  "engines": {
+    "node": ">=0.6"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt": "~0.3.12",
+	"node-qunit" : "~0.5"
+  },
+  
+  "devDependencies": {
+    "grunt": "~0.3.12"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    "node-qunit",
+	"qunit",
+	"test"
+  ],
+  "_id": "grunt-node-qunit@0.0.1",
+  "optionalDependencies": {},
+  "_engineSupported": true,
+  "_npmVersion": "1.1.16",
+  "_nodeVersion": "v0.6.15",
+  "_defaultsLoaded": true,
+  "_from": "grunt-node-qunit@*"
+}

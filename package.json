@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "grunt": "~0.3.12",
-	"node-qunit" : "~0.5"
+    "qunit" : "~0.5.13"
   },
   
   "devDependencies": {

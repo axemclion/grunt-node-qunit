@@ -1,4 +1,7 @@
 grunt-node-qunit
+
+[![Build Status](https://api.travis-ci.org/axemclion/grunt-node-qunit.png?branch=master)](https://travis-ci.org/axemclion/grunt-node-qunit)
+
 -----------------
 
 A Grunt task for running [node-qunit](https://github.com/kof/node-qunit)

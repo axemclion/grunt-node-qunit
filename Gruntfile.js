@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-		lint: {
+		jshint: {
 			files: ['grunt.js', 'tasks/**/*.js']
 		},
 		'node-qunit': {
@@ -91,6 +91,8 @@ module.exports = function(grunt) {
 		}
 	});
 	grunt.loadTasks('tasks');
-	grunt.registerTask('default', 'lint test');
-	grunt.registerTask('test', 'node-qunit:case1 node-qunit:case2 node-qunit:case3 node-qunit:case4 node-qunit:case5 node-qunit:case6 node-qunit:case7 node-qunit:case8 node-qunit:case9');
+	grunt.loadNpmTasks('grunt-contrib-jshint')
+
+	grunt.registerTask('default', ['jshint', 'test']);
+	grunt.registerTask('test', 'node-qunit');
 };

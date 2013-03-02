@@ -90,9 +90,29 @@ module.exports = function(grunt) {
 			}
 		}
 	});
+
+	grunt.registerTask('publish', 'Publish the latest version of this plugin', function() {
+		var done = this.async();
+		var publish = require('publish');
+		publish.start(function(err) {
+			if (err) {
+				console.log(err);
+				done(false);
+			} else {
+				publish.publish({}, function(err) {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log("Package Published");
+						done(true);
+					}
+				});
+			}
+		});
+	});
 	grunt.loadTasks('tasks');
 	grunt.loadNpmTasks('grunt-contrib-jshint')
 
 	grunt.registerTask('default', ['jshint', 'test']);
-	grunt.registerTask('test', 'node-qunit');
+	grunt.registerTask('test', ['node-qunit', 'publish']);
 };

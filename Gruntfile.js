@@ -88,11 +88,39 @@ module.exports = function(grunt) {
 					}, 100);
 				}
 			}
+		},
+		publish: {
+			npm: {
+				username: process.env.NPM_USERNAME,
+				password: process.env.NPM_PASSWORD,
+				email: process.env.NPM_EMAIL
+			}
 		}
 	});
+
+	grunt.registerMultiTask('publish', 'Publish the latest version of this plugin', function() {
+		var done = this.async(),
+			me = this,
+			npm = require('npm');
+		npm.load({}, function(err) {
+			npm.registry.adduser(me.data.username, me.data.password, me.data.email, function(err) {
+				if (err) {
+					console.log(err);
+					done(false);
+				} else {
+					npm.config.set("email", me.data.email, "user");
+					npm.commands.publish([], function(err) {
+						console.log(err || "Published to registry");
+						done(!err);
+					});
+				}
+			});
+		});
+	});
+
 	grunt.loadTasks('tasks');
-	grunt.loadNpmTasks('grunt-contrib-jshint')
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 	grunt.registerTask('default', ['jshint', 'test']);
-	grunt.registerTask('test', 'node-qunit');
+	grunt.registerTask('test', ['node-qunit', 'publish']);
 };

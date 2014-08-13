@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 		var files = {};
 		if(this.data.code) files.code = this.data.code;
 		if(this.data.deps) files.deps = this.data.deps;
+		if(this.data.moduleDeps) files.moduleDeps = this.data.moduleDeps;
 		if(this.data.tests) files.tests = this.data.tests;
 		qunit.run(files, function(err, result) {
 			if(!result) {

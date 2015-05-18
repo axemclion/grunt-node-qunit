@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 			this.async = function() {
 				waitForAsync = true;
 				return function(status) {
-					done(typeof status === "undefined" ? (result.failed === 0) : status);
+					done(typeof status === "undefined" ? (result.failed === 0 && !err) : status);
 					log.reset();
 				};
 			};
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 				res = callback(err, result);
 			}
 			if(!waitForAsync) {
-				done(typeof res === "undefined" ? (result.failed === 0) : res);
+				done(typeof res === "undefined" ? (result.failed === 0 && !err) : res);
 				log.reset();
 			}
 		});

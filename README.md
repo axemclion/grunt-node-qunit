@@ -38,7 +38,7 @@ The parameters are
 * __deps__ : define dependencies, which are required then before code, passed in qunit.run()
 * __code__ : define the code that needs to be tested
 * __tests__: define the test files
-* __done__ : A callback that is called everytime a qunit test for a page is complete. Runs per page, per browser configuration. A true or false return value passes or fails the test, undefined return value does not alter the result of the test. For async results, call `this.async()` in the function. The return of `this.async()` is a function that should be called once the async action is completed.
+* __callback__ : A callback that is called everytime a qunit test for a page is complete. Runs per page, per browser configuration. A true or false return value passes or fails the test, undefined return value does not alter the result of the test. For async results, call `this.async()` in the function. The return of `this.async()` is a function that should be called once the async action is completed.
 
 #Example
 
@@ -54,7 +54,7 @@ grunt.initConfig({
 		tests: testFiles.map(function(n){
 			return "./tests/" + n;
 		}),
-		done: function(err, res){
+		callback: function(err, res){
 			!err && publishResults("node", res, this.async());
 		}
 	},

@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-	var log = require('../node_modules/qunit/lib/log.js');
+	var log = require('qunit/lib/log.js');
 	var qunit = require("qunit");
 
 	grunt.registerMultiTask("node-qunit", "Runs node-qunit ", function() {

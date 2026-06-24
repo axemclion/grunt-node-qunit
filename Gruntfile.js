@@ -122,5 +122,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 	grunt.registerTask('default', ['jshint', 'test']);
-	grunt.registerTask('test', ['node-qunit', 'publish']);
+	grunt.registerTask('test', ['node-qunit']);
 };

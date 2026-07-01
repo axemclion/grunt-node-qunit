@@ -32,16 +32,16 @@
     "test": "npx grunt test"
   },
   "dependencies": {
-    "qunit": "0.5.16"
+    "qunit": "2.26.0"
   },
   "peerDependency": {
     "grunt": "~0.4.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
+    "grunt": "~1.6.2",
     "grunt-cli": "^1.5.0",
-    "grunt-contrib-jshint": "~0.1.1",
-    "npm": "~1.2.12"
+    "grunt-contrib-jshint": "~3.2.0",
+    "npm": "~11.18.0"
   },
   "keywords": [
     "gruntplugin",

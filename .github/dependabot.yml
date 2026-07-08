@@ -9,6 +9,13 @@ updates:
       dev-dependencies:
         patterns:
           - "*"
+    ignore:
+      # npm's "qunit" name was reassigned over the years: 0.5.16 here is
+      # the old kof/node-qunit wrapper (setup()/run() API) this plugin is
+      # built against, not the real QUnit.js that owns the name today.
+      # Major bumps aren't a compatible upgrade, just a different library.
+      - dependency-name: "qunit"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

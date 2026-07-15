@@ -32,7 +32,7 @@
     "test": "npx grunt test"
   },
   "dependencies": {
-    "qunit": "0.9.3"
+    "qunit": "2.26.0"
   },
   "peerDependency": {
     "grunt": "~0.4.0"
